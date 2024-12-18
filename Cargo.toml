@@ -1,0 +1,14 @@
+[package]
+name = "keepalivetest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hex = { version = "0.4.3", features = ["serde"] }
+libc = "0.2.168"
+rustls = "0.23.20"
+webpki-roots = "0.26.7"
+
+[target.x86_64-unknown-linux-musl]
+rustflags = ["-C", "target-feature=+crt-static"]
+
